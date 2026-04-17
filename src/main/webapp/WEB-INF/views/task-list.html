@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Task List</title>
+    </head>
+    <body>
+        <h2>Danh sách công việc</h2>
+        <a th:href="@{/tasks/add}">Thêm mới</a>
+        <table border="1">
+            <tr>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Deadline</th>
+                <th>Priority</th>
+            </tr>
+
+            <tr th:each="t : ${tasks}">
+                <td th:text="${t.id}"></td>
+                <td th:text="${t.title}"></td>
+                <td th:text="${t.deadline}"></td>
+                <td th:text="${t.priority}"></td>
+            </tr>
+        </table>
+
+    </body>
+</html>
